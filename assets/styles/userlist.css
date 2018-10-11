@@ -1,0 +1,38 @@
+h2 {
+	margin-bottom: 20px;
+	font-size: 24px;
+}
+
+.card__body {
+ padding: 15px;
+}
+
+.user-list__item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center; 
+	padding: 30px;
+	width: 230px;
+	height: 80px;
+}
+
+.user-list__item::hover {
+	color: green
+	transition: .2s;
+	cursor: pointer;
+}
+
+.user-list__avatar {
+	background-size: 180%;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+}
+
+.user-list__type {
+	margin-bottom: 30px;
+}
+
+.user-list__name {
+	margin-bottom: 10px;
+}
