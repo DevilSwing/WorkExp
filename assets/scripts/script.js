@@ -11,28 +11,35 @@ let newUserId = null;
 let userPost = null; 
 let userList = [ 
 { 
-		password: 7589, 
+		img: 'https://cs9.pikabu.ru/post_img/2017/10/04/8/1507120937175937484.png',	
+		id: 7589, 
 		type: 'Админ', 
 		name: 'Captain', 
 		age: 16 
 }, 
 { 
-		password: 3589, 
+		img: 'https://i.pinimg.com/originals/be/98/87/be9887459481a3c313c2973a8c3700d4.jpg',
+		id: 3589, 
 		type: 'Юзер', 
 		name: 'Жорик', 
 		age: 17 
 }, 
 { 
-		password: '0589', 
+		img: 'https://www.themanime.org/images/screens/overlord08.JPG',
+		id: '0589', 
 		type: 'Хакер', 
-		name: 'Милая Моя Читерюшко', 
+		name: 'Милая', 
 		age: undefined 
 } 
 ]; 
 
+
+
+
+
 // 2 Этап - 
 
-// interfaceBuilder.build('login');
+ interfaceBuilder.buildAdminInterface(userList);
 
 $('.js-authBtn').click(function() {
 	checkPass($('.js-authInput').val());
@@ -49,12 +56,16 @@ $(".form-auth").on("submit", function(e){
 
 
 function checkPass(userPassword) { 
-	for (let i = 0; i < userList.length; i++) { 
-		if (userPassword == userList[i].password) { 
+
+	userList.forEach(function(user){
+		if (userPassword == user.id) { 
 			userLoggedIn = true; 
-			currentUser = userList[i]; 
+			currentUser = user; <div class="user-list__item card">
+	<div class="stick r"></div>
+	<div class="stick l"></div>
 		} 
-	} 
+	});
+	
 
 	if (!userLoggedIn) { 
 		$('.js-authParent').addClass('-error');

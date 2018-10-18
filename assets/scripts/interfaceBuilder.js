@@ -22,12 +22,49 @@ interfaceBuilder.interfaces = {
 					</fieldset>\
 				</form>\
 			</div>\
-		</div>'
+		</div>',
+	base: '<div class="panel">\
+			<div  class="card">\
+				<div class="card__header js-cardHeader">\
+					<h2></h2>\
+				</div>\
+				<div class="card__body js-cardBody">\
+				</div>\
+			</div>\
+				</div>'	
+
+
 };
 
 interfaceBuilder.build = function(interface) {
  interfaceBuilder.parent.html(interfaceBuilder.interfaces[interface]);
 };
+
+interfaceBuilder.prepareUserList = function(userList){
+	let result = '<div class="user-list">';
+
+	userList.forEach(function(user) {
+
+		result += '<div class="user-list__item card">\
+							<div class="user-list__avatar" style="background-image: url(' + user.img + ')">\
+							</div>\
+							<div class="user-list__info">\
+								<p class="user-list__type">' + user.type + '</p>\
+								<p class="user-list__name">' + user.name + '</p>\
+								<p class="user-list__id">ID: <span>' + user.id + '</span></p>\
+							</div>\
+						</div>';
+						
+						
+	});
+	'<div class="user-list__item card">\
+							<div class="user-list__item card">
+	<div class="stick r"></div>
+	<div class="stick l"></div>
+						</div>';
+	return result + '</div>';
+}
+
 
 interfaceBuilder.showMessage = function (message) {
 	interfaceBuilder.hideCurrent();
@@ -41,3 +78,9 @@ interfaceBuilder.hideCurrent =  function() {
 
 };
 
+
+interfaceBuilder.buildAdminInterface = function(userList) {
+	interfaceBuilder.build('base');
+	interfaceBuilder.parent.find('.js-cardHeader h2').text('Admin Interface');
+	interfaceBuilder.parent.find('.js-cardBody').html(interfaceBuilder.prepareUserList(userList));
+}
