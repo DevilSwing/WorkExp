@@ -14,9 +14,14 @@
 	color: white;
 	box-sizing: border-box;
 }
-.input__field {
+
+.input__field{
+	width: 100%;
+}
+
+.input__field.-with-btn {
 	margin-right: 20px;
-	width: 80%;
+	width: 85%;
 }
 .input__btn {
 	text-align: center;

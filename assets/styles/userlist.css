@@ -19,9 +19,9 @@ transition: 0.8s;
 cursor: pointer; 
 }
 
-.user-list__item::hover {
-	color: green
-	transition: .2s;
+.user-list__item:hover {
+	transition: 0.2s;
+	border-color: green;
 	cursor: pointer;
 }
 

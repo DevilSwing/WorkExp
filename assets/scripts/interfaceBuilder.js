@@ -12,9 +12,9 @@ interfaceBuilder.interfaces = {
 						<div class="input__container">\
 							<input 	id="UserPass" \
 									type="text" \
-									class="input__field js-authInput"\
+									class="input__field js-authInput -with-btn"\
 									autocomplete="off">\
-							<div class="input__btn js-authBtn">></div>\
+							<div class="input__btn js-newUserBtn">></div>\
 						</div>\
 						<div class="input__error">\
 							<span>No Such User</span>\
@@ -57,12 +57,11 @@ interfaceBuilder.prepareUserList = function(userList){
 						
 						
 	});
-	'<div class="user-list__item card">\
-							<div class="user-list__item card">
-	<div class="stick r"></div>
-	<div class="stick l"></div>
-						</div>';
-	return result + '</div>';
+	
+	return result + '</div>' + '<div class="add card js-addBtn ">\
+								<div class="stick r"></div>\
+								<div class="stick l"></div>	\
+							</div>';
 }
 
 

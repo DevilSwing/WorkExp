@@ -35,14 +35,44 @@ h1 {
 }
 
 .stick {
+	position: absolute;
 	background-color: white;
+}
+.add {
+	margin-left: 20px;
+	margin-top: 20px;
+	width: 275px;
+    padding: 10px;
+}
+
+
+.add:hover {
+	border-color: yellow;
+	background-color: blue;
+	cursor: pointer;
 }
 
 .r { 
+	position: relative;
+	bottom: -35px;
+	left:  100px;
 	width: 70px;
 	height: 10px;
 }
 .l {
+	position: relative;
+	top: -5px;
+	left: 130px;
 	width: 10px;
 	height: 70px;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.row > fieldset {
+	width: calc(50% - 10px);
 }

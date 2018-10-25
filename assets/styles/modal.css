@@ -1,0 +1,35 @@
+.modal {
+	position: fixed;
+	display: none;
+	justify-content: center;
+	align-items: center;
+
+}
+.modal.-open {
+	display: flex;
+}
+
+.modal,
+.modal__bg {
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+
+.modal__bg {
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal__body {
+	width: 350px;
+	z-index: 2;
+	background-color: #000;
+}
+
+.modal__title {
+	font-size: 24px;
+	margin-bottom: 20px;
+}

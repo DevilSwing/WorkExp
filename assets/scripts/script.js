@@ -39,7 +39,21 @@ let userList = [
 
 // 2 Этап - 
 
+
  interfaceBuilder.buildAdminInterface(userList);
+
+
+ $('.js-addBtn').click(function(){
+	$('.modal').add('-open');
+	$('body').append(modalService.modals.base);
+	modalService.openModal('newUser');
+});
+
+ $('body').on('click', '.modal__bg', function(){
+	$('.modal').removeClass('-open');
+});
+
+
 
 $('.js-authBtn').click(function() {
 	checkPass($('.js-authInput').val());
@@ -60,9 +74,7 @@ function checkPass(userPassword) {
 	userList.forEach(function(user){
 		if (userPassword == user.id) { 
 			userLoggedIn = true; 
-			currentUser = user; <div class="user-list__item card">
-	<div class="stick r"></div>
-	<div class="stick l"></div>
+			currentUser = user;
 		} 
 	});
 	
@@ -77,6 +89,17 @@ function checkPass(userPassword) {
 
 function downloadTheInternet() { 
 	confirm('Скачать интернет?') 
-} 
+}
+
+
+
+// $('body').append(modalService.modals.base);
+// modalService.openModal('newUser');
+
+
+
+
 
 });
+
+
