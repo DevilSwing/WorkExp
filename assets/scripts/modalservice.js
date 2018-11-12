@@ -13,7 +13,7 @@ modalService.modals = {
 							<div class="input__container">\
 								<input 	id="UserName" \
 										type="text" \
-										class="input__field js-authInput"\
+										class="input__field js-newUserName"\
 										autocomplete="off">\
 							</div>\
 							<div class="input__error">\
@@ -24,8 +24,8 @@ modalService.modals = {
 							<label for="UserAge">Age</label>\
 							<div class="input__container">\
 								<input 	id="UserAge" \
-										type="text" \
-										class="input__field js-authInput"\
+										type="text"\
+										class="input__field js-newUserAge"\
 										autocomplete="off">\
 							</div>\
 							<div class="input__error">\
@@ -36,9 +36,9 @@ modalService.modals = {
 					<fieldset class="input js-authParent">\
 						<label for="UserType">Type</label>\
 						<div class="input__container">\
-							<input 	id="UserAge" \
-									type="text" \
-									class="input__field js-authInput  -with-btn"\
+							<input 	id="UserType" \
+									type="text"\
+									class="input__field js-newUserType  -with-btn"\
 									autocomplete="off">\
 							<div class="input__btn js-newUserBtn">></div>\
 						</div>\

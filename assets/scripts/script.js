@@ -28,7 +28,7 @@ let userList = [
 		img: 'https://www.themanime.org/images/screens/overlord08.JPG',
 		id: '0589', 
 		type: 'Хакер', 
-		name: 'Милая', 
+		name: 'Кадр', 
 		age: undefined 
 } 
 ]; 
@@ -53,6 +53,19 @@ let userList = [
 	$('.modal').removeClass('-open');
 });
 
+$('body').on('click', '.js-newUserBtn', function() {
+	console.log(12);
+	userList.push({
+		img: 'https://www.themanime.org/images/screens/overlord08.JPG',
+		id: '0589', 
+		type:$('.js-newUserType').val(), 
+		name:$('.js-newUserName').val(), 
+		age:$('.js-newUserAge').val()
+	});
+	$('.modal').removeClass('-open');
+	interfaceBuilder.buildAdminInterface(userList);
+
+})
 
 
 $('.js-authBtn').click(function() {
