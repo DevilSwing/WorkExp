@@ -40,14 +40,15 @@ let userList = [
 // 2 Этап - 
 
 
- interfaceBuilder.buildAdminInterface(userList);
-
-
- $('.js-addBtn').click(function(){
+ // interfaceBuilder.buildAdminInterface(userList);
+ interfaceBuilder.build('login');
+$('body').on('click', '.js-addBtn', function(){
 	$('.modal').add('-open');
-	$('body').append(modalService.modals.base);
-	modalService.openModal('newUser');
+		$('body').append(modalService.modals.base);
+		modalService.openModal('newUser');
 });
+
+
 
  $('body').on('click', '.modal__bg', function(){
 	$('.modal').removeClass('-open');
@@ -57,7 +58,7 @@ $('body').on('click', '.js-newUserBtn', function() {
 	console.log(12);
 	userList.push({
 		img: 'https://www.themanime.org/images/screens/overlord08.JPG',
-		id: '0589', 
+		id: generateId($('.js-newUserType').val()), 
 		type:$('.js-newUserType').val(), 
 		name:$('.js-newUserName').val(), 
 		age:$('.js-newUserAge').val()
@@ -65,12 +66,16 @@ $('body').on('click', '.js-newUserBtn', function() {
 	$('.modal').removeClass('-open');
 	interfaceBuilder.buildAdminInterface(userList);
 
+
 })
 
-
-$('.js-authBtn').click(function() {
+$('body').on('click', '.js-authBtn', function() {
 	checkPass($('.js-authInput').val());
 });
+
+// $('.js-authBtn').click(function() {
+// 	checkPass($('.js-authInput').val());
+// });
 
 
  $('.js-authInput').focus(function() {
@@ -96,6 +101,9 @@ function checkPass(userPassword) {
 		$('.js-authParent').addClass('-error');
 	} else { 
 	 	interfaceBuilder.showMessage('Welcome on board, ' + currentUser.name);
+	 	setTimeout(function(){
+			interfaceBuilder.buildAdminInterface(userList);
+	 	},1000);
 	} 
 } 
 
@@ -110,8 +118,14 @@ function downloadTheInternet() {
 // modalService.openModal('newUser');
 
 
-
-
+$('body').on('click', '.js-logOut', function(){
+	currentUser = null;
+	userLoggedIn = false; 
+	interfaceBuilder.build('login');
+});
+function generateId(user){
+return Math.floor(Math.random() * (9999));
+};
 
 });
 

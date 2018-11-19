@@ -14,7 +14,7 @@ interfaceBuilder.interfaces = {
 									type="text" \
 									class="input__field js-authInput -with-btn"\
 									autocomplete="off">\
-							<div class="input__btn js-newUserBtn">></div>\
+							<div class="input__btn js-authBtn">></div>\
 						</div>\
 						<div class="input__error">\
 							<span>No Such User</span>\
@@ -27,6 +27,7 @@ interfaceBuilder.interfaces = {
 			<div  class="card">\
 				<div class="card__header js-cardHeader">\
 					<h2></h2>\
+					<i class="far fa-times-circle js-logOut"></i>\
 				</div>\
 				<div class="card__body js-cardBody">\
 				</div>\

@@ -6,17 +6,33 @@ h2 {
 .card__body {
  	padding: 15px;
 }
+.card__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.fa-times-circle {
+	font-size: 30px;
+}
 
 .user-list {
-	display: flex;	
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
 }
+
+.user-list__item.card {
+	flex-basis: 25%;
+	margin-bottom: 15px;
+}
+
 .user-list__item {
 	margin-left: 20px;
 	width: 300px; 
-display: flex; 
-justify-content: space-between; 
-transition: 0.8s; 
-cursor: pointer; 
+	display: flex; 
+	justify-content: space-between; 
+	transition: 0.8s; 
+	cursor: pointer; 
 }
 
 .user-list__item:hover {
